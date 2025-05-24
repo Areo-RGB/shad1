@@ -653,11 +653,11 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--primary)",
+    color: "hsl(212, 93.3%, 53.3%)",
   },
   mobile: {
     label: "Mobile",
-    color: "var(--primary)",
+    color: "hsl(212, 93.3%, 53.3%)",
   },
 } satisfies ChartConfig
 

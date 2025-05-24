@@ -51,11 +51,11 @@ const chartData = [
 const chartConfig = {
   visitors: {
     label: "Visitors",
-    color: "hsl(var(--primary-500))", // Primary blue color
+    color: "hsl(212, 93.3%, 53.3%)", // Primary blue color
   },
   visits: {
     label: "Page Views",
-    color: "hsl(var(--secondary-700))", // Secondary slate-blue color
+    color: "hsl(220, 33.7%, 40.2%)", // Secondary slate-blue color
   },
 } satisfies ChartConfig
 
@@ -143,24 +143,24 @@ export function ChartAreaInteractive() {
                 <linearGradient id="fillVisitors" x1="0" y1="0" x2="0" y2="1">
                   <stop
                     offset="5%"
-                    stopColor="hsl(var(--primary-500))"
+                    stopColor="hsl(212, 93.3%, 53.3%)"
                     stopOpacity={0.5}
                   />
                   <stop
                     offset="95%"
-                    stopColor="hsl(var(--primary-500))"
+                    stopColor="hsl(212, 93.3%, 53.3%)"
                     stopOpacity={0.05}
                   />
                 </linearGradient>
                 <linearGradient id="fillVisits" x1="0" y1="0" x2="0" y2="1">
                   <stop
                     offset="5%"
-                    stopColor="hsl(var(--secondary-700))"
+                    stopColor="hsl(220, 33.7%, 40.2%)"
                     stopOpacity={0.4}
                   />
                   <stop
                     offset="95%"
-                    stopColor="hsl(var(--secondary-700))"
+                    stopColor="hsl(220, 33.7%, 40.2%)"
                     stopOpacity={0.05}
                   />
                 </linearGradient>
@@ -176,7 +176,7 @@ export function ChartAreaInteractive() {
                 axisLine={false}
                 tickMargin={8}
                 minTickGap={32}
-                tick={{ fill: 'hsl(var(--base-200))' }}
+                tick={{ fill: 'hsl(274, 14.3%, 90.4%)' }}
                 tickFormatter={(value) => {
                   const date = new Date(value)
                   return `Jun ${date.getDate()}`
@@ -200,14 +200,14 @@ export function ChartAreaInteractive() {
                 dataKey="visits"
                 type="monotone"
                 fill="url(#fillVisits)"
-                stroke="hsl(var(--secondary-700))"
+                stroke="hsl(220, 33.7%, 40.2%)"
                 strokeWidth={2}
               />
               <Area
                 dataKey="visitors"
                 type="monotone"
                 fill="url(#fillVisitors)"
-                stroke="hsl(var(--primary-500))"
+                stroke="hsl(212, 93.3%, 53.3%)"
                 strokeWidth={2}
               />
             </AreaChart>
