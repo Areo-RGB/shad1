@@ -1,6 +1,14 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import jsdoc from "eslint-plugin-jsdoc";
+import reactPlugin from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import importPlugin from "eslint-plugin-import";
+import jsxA11y from "eslint-plugin-jsx-a11y";rt { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
+import jsdoc from "eslint-plugin-jsdoc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -47,7 +55,16 @@ const ignores = [
 ];
 
 const eslintConfig = [
-  { ignores },
+  { 
+    ignores,
+    plugins: {
+      react: reactPlugin,
+      "react-hooks": reactHooks,
+      import: importPlugin,
+      "jsx-a11y": jsxA11y,
+      jsdoc
+    }
+  },
   // Base configurations
   ...compat.extends(
     "next/core-web-vitals", 
@@ -182,7 +199,10 @@ const eslintConfig = [
           "FunctionDeclaration": true,
           "ArrowFunctionExpression": true
         }
-      }]
+      }],
+      "jsdoc/check-param-names": "warn",
+      "jsdoc/check-tag-names": "warn",
+      "jsdoc/check-types": "warn"
     }
   },
   
