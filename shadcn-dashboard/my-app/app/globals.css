@@ -4,21 +4,19 @@
 
 @layer base {
   :root {
-    /* Base colors (blue-gray scale) */
-    --base-50: 210 40% 98%;
-    --base-100: 214 24.1% 94.3%;
-    --base-200: 213 20% 91.2%;
-    --base-300: 213 13.3% 83.7%;
-    --base-400: 218 5.9% 63.3%;
-    --base-500: 215 5.2% 45.5%;
-    --base-600: 213 6.4% 33.5%;
-    --base-700: 213 6.9% 25.7%;
-    --base-800: 214 8.4% 16.3%;
-    --base-900: 220 12% 9.8%;
-    --base-950: 225 25% 3.1%;
-    --base-1000: 210 50% 0.8%;
+    --base-50: 276 45.5% 97.8%;
+    --base-100: 276 26.3% 96.3%;
+    --base-200: 274 14.3% 90.4%;
+    --base-300: 278 9.8% 83.9%;
+    --base-400: 277 4.3% 63.5%;
+    --base-500: 273 3.9% 45.7%;
+    --base-600: 270 4.7% 33.3%;
+    --base-700: 274 5.3% 25.7%;
+    --base-800: 276 6.2% 15.9%;
+    --base-900: 270 8% 9.8%;
+    --base-950: 270 18.2% 4.3%;
+    --base-1000: 270 25% 1.6%;
 
-    /* Primary colors (blue scale) */
     --primary-50: 212 100% 97.1%;
     --primary-100: 212 94.4% 92.9%;
     --primary-200: 211 97% 87.1%;
@@ -32,7 +30,6 @@
     --primary-950: 222 61.2% 20.2%;
     --primary-1000: 223 54.5% 12.9%;
 
-    /* Secondary colors (slate-blue scale) */
     --secondary-50: 210 33.3% 96.5%;
     --secondary-100: 210 28.6% 91.8%;
     --secondary-200: 213 30.6% 85.9%;
@@ -46,50 +43,6 @@
     --secondary-950: 224 23.9% 18%;
     --secondary-1000: 225 20.7% 11.4%;
 
-    /* Light mode semantic colors */
-    --background: var(--base-50);
-    --foreground: var(--base-800);
-    --card: 0 0% 100%;
-    --card-foreground: var(--base-800);
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--base-800);
-    --primary: var(--primary-500);
-    --primary-foreground: 0 0% 0%;
-    --secondary: var(--secondary-700);
-    --secondary-foreground: 0 0% 100%;
-    --muted: var(--base-100);
-    --muted-foreground: var(--base-600);
-    --accent: var(--base-100);
-    --accent-foreground: var(--base-800);
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: var(--base-200);
-    --input: var(--base-300);
-    --ring: var(--primary-500);
-    
-    /* Chart colors - light mode */
-    --chart-1: var(--primary-500);
-    --chart-2: var(--secondary-700);
-    --chart-3: var(--primary-300);
-    --chart-4: var(--secondary-300);
-    --chart-5: var(--primary-100);
-    
-    /* Border radius */
-    --radius: 1rem;
-    
-    /* Sidebar - light mode */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: var(--primary-500);
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: var(--base-50);
-    --sidebar-accent-foreground: var(--base-800);
-    --sidebar-border: var(--base-200);
-    --sidebar-ring: var(--primary-500);
-  }
-
-  .dark {
-    /* Dark mode semantic colors */
     --background: var(--base-950);
     --foreground: var(--base-200);
     --card: var(--base-900);
@@ -109,16 +62,12 @@
     --border: var(--base-800);
     --input: var(--base-700);
     --ring: var(--primary-500);
-    
-    /* Chart colors - dark mode */
     --chart-1: var(--primary-500);
     --chart-2: var(--secondary-700);
     --chart-3: var(--primary-300);
     --chart-4: var(--secondary-300);
     --chart-5: var(--primary-100);
-    
-    /* Sidebar - dark mode */
-    --sidebar-background: var(--base-900);
+    --sidebar: var(--base-800);
     --sidebar-foreground: var(--base-200);
     --sidebar-primary: var(--primary-500);
     --sidebar-primary-foreground: 0 0% 0%;
@@ -127,15 +76,33 @@
     --sidebar-border: var(--base-800);
     --sidebar-ring: var(--primary-500);
   }
-}
 
-
-
-@layer base {
-  * {
-    @apply border-border;
-  }
+  /* Remove global border application to prevent unwanted borders on all elements */
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Note: Use border-border class explicitly in your components when you want themed borders
+     Example: <div class="border border-border rounded-md"> */
+}
+
+@layer utilities {
+  /* Typography utilities that combine font family and weight for clearer naming
+   * We're using 'text-' prefix to distinguish from Tailwind's 'font-' classes
+   * These classes combine both font-family and font-weight in one class for convenience
+   */
+  .text-display {
+    font-family: var(--font-poppins);
+    font-weight: var(--display-weight);
+  }
+  .text-body {
+    font-family: var(--font-lexend);
+    font-weight: var(--text-weight);
+  }
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
   }
 }
