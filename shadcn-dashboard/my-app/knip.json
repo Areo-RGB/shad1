@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/knip-dev/knip/main/schema/v1.json",
+  "entry": ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "lib/**/*.{ts,tsx}", "hooks/**/*.{ts,tsx}"],
+  "project": "**/*.{ts,tsx}",
+  "ignoreDependencies": ["tailwindcss-animate"]
+}

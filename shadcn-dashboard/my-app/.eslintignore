@@ -1,0 +1,37 @@
+# Build artifacts
+.next/
+out/
+dist/
+build/
+
+# Node modules
+node_modules/
+
+# Coverage reports
+coverage/
+
+# Configuration files
+next-env.d.ts
+next.config.ts
+tailwind.config.ts
+postcss.config.mjs
+*.config.js
+*.config.mjs
+
+# Type declarations
+*.d.ts
+
+# Public assets
+public/
+
+# Environment variables
+.env*
+!.env.example
+
+# Cache files
+.eslintcache
+.vercel
+.swc/
+
+# Generated files
+eslint-report.html
