@@ -11,11 +11,8 @@ import {
   FileIcon,
   FileTextIcon,
   FolderIcon,
-  HelpCircleIcon,
   LayoutDashboardIcon,
   ListIcon,
-  SearchIcon,
-  SettingsIcon,
   UsersIcon,
 } from "lucide-react"
 
@@ -115,21 +112,7 @@ const data = {
     },
   ],
   navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: SettingsIcon,
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: HelpCircleIcon,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: SearchIcon,
-    },
+    // Items removed as requested
   ],
   documents: [
     {
